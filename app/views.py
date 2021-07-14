@@ -44,3 +44,31 @@ def index(request):
         }
 
     return render(request, 'app/index.html', context)
+
+
+
+def SearchResultsView(ListView):
+
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=685feed5f1bd934d26f395f2e68fbd7f'
+
+
+    cities = City.objects.all()
+
+    weather_data = []
+    for city in cities:
+        r = requests.get(url.format(city)).json()
+
+        city_weather = {
+            'city': city.name,
+            'temp': r['main']['temp'],
+            'description':r['weather'][0]['description'],
+            'icon': r['weather'][0]['icon'],
+            'time': r['dt'],
+            'sunset': r['sys']['sunset'],
+            'country': r['sys']['country']
+        }
+     
+        weather_data.append(city_weather)
+    queryset1 = City.objects.filter(name__icontains='Boston')
+    context = {'queryset1':queryset1}
+    return render(request, 'app/search.html', context)
