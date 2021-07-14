@@ -115,7 +115,7 @@
         <div class="dif-city">
             <div class="small-con">
                 <div class="row">
-                    {% for city_weather in weather_data%}
+                    {% for city_weather in weather_data %}
                         {% if forloop.counter < 5 %}
 
                         <div class="col-4">
@@ -141,7 +141,7 @@
             <div class="small-con">
 
                 <div class="row">
-                    {% for city_weather in weather_data|slice:"4:8" %}
+                    {% for city_weather in weather_data %}
                     {% if forloop.counter > 5 and < 9 %}
 
                         <div class="col-4">
