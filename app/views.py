@@ -72,7 +72,7 @@ def SearchResultsView(request):
     
 
     if request.method == 'GET':
-        query = self.request.GET.gte('q')
+        query = request.GET.get('q')
         object_list = City.objects.filter(
             Q(name__contains=query)
         )
