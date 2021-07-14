@@ -34,7 +34,8 @@ def index(request):
     print(weather_data)
     context = {
         'weather_data': weather_data,
-        'first_row': weather_data[:5],
+        'first_row': weather_data[:4],
+        # 'sec_row': weather_data[4:9],
 
         }
 
