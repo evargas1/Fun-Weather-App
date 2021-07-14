@@ -23,6 +23,8 @@ def index(request):
             'temp': r['main']['temp'],
             'description':r['weather'][0]['description'],
             'icon': r['weather'][0]['icon'],
+            'time': city.dt,
+            'sunset': r['sys']['sunset'],
         }
      
         weather_data.append(city_weather)
