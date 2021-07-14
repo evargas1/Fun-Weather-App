@@ -47,7 +47,7 @@ def index(request):
 
 
 
-def SearchResultsView(ListView):
+def SearchResultsView(request):
 
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=685feed5f1bd934d26f395f2e68fbd7f'
 
@@ -71,4 +71,6 @@ def SearchResultsView(ListView):
         weather_data.append(city_weather)
     queryset1 = City.objects.filter(name__icontains='Boston')
     context = {'queryset1':queryset1}
+
+
     return render(request, 'app/search.html', context)
