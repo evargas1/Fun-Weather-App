@@ -115,8 +115,8 @@
         <div class="dif-city">
             <div class="small-con">
                 <div class="row">
-                    {% for city_weather in weather_data %}
-                        {% if forloop.counter < 5 %}
+                    {% for city_weather in first_row%}
+                        
 
                         <div class="col-4">
                             <img src="{% static './img/sample.img.jpg' %}" alt="">
@@ -128,7 +128,7 @@
                             </div>
                         </div>
 
-                        {% endif %}
+                        
                     {% endfor %}
     
                     </div>
@@ -140,9 +140,9 @@
             <!-- add 30px padding -->
             <div class="small-con">
 
-                <div class="row">
+                <!-- <div class="row">
                     {% for city_weather in weather_data %}
-                    {% if forloop.counter > 5 and < 9 %}
+                    {% if forloop.counter > 5  %}
 
                         <div class="col-4">
                             <img src="{% static './img/sample.img.jpg' %}" alt="">
@@ -157,7 +157,7 @@
                         {% endif %}
                         {% endfor %}
     
-                    </div>
+                    </div> -->
 
             </div>
 

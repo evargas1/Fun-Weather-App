@@ -33,7 +33,9 @@ def index(request):
     # print(city_weather)
     print(weather_data)
     context = {
-        'weather_data': weather_data
+        'weather_data': weather_data,
+        'first_row': weather_data[:5],
+
         }
 
     return render(request, 'app/index.html', context)
