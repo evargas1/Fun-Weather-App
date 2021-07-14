@@ -121,7 +121,7 @@
                         <div class="col-4">
                             <img src="{% static './img/sample.img.jpg' %}" alt="">
                             <div class="city-name">
-                                <h3>{{ city_weather.city|capfirst }}</h3>
+                                <h3>{{ city_weather.city|capfirst }}, {{ city_weather.country|title }}</h3>
                                 <h3>{{ city_weather.temp }} &#8457;</h3>
                                 <h5>{{ city_weather.description }}</h5>
                                 
@@ -147,7 +147,7 @@
                         <div class="col-4">
                             <img src="{% static './img/sample.img.jpg' %}" alt="">
                             <div class="city-name">
-                                <h3>{{ city_weather.city|capfirst }}</h3>
+                                <h3>{{ city_weather.city|capfirst }}, {{ city_weather.country|title }}</h3>
                                 <h3>{{ city_weather.temp }} &#8457;</h3>
                                 <h5>{{ city_weather.description }}</h5>
                                 
@@ -173,7 +173,7 @@
                             <div class="col-4">
                                 <img src="{% static './img/sample.img.jpg' %}" alt="">
                                 <div class="city-name">
-                                    <h3>{{ city_weather.city|capfirst }}</h3>
+                                    <h3>{{ city_weather.city|capfirst }}, {{ city_weather.country|title }}</h3>
                                     <h3>{{ city_weather.temp }} &#8457;</h3>
                                     <h5>{{ city_weather.description }}</h5>
                                     
@@ -194,20 +194,24 @@
 
             <div class="small-con">
 
-                <!-- <div class="row">
-                    {% for city_weather in weather_data %}
+                <div class="row">
+                    {% for city_weather in fourth_row %}
+                        
+
                         <div class="col-4">
                             <img src="{% static './img/sample.img.jpg' %}" alt="">
                             <div class="city-name">
-                                <h3>{{ city_weather.city|capfirst }}</h3>
+                                <h3>{{ city_weather.city|capfirst }}, {{ city_weather.country|title }}</h3>
                                 <h3>{{ city_weather.temp }} &#8457;</h3>
                                 <h5>{{ city_weather.description }}</h5>
                                 
                             </div>
                         </div>
-                        {% endfor %}
+
+                        
+                    {% endfor %}
     
-                    </div> -->
+                    </div>
 
             </div>
 
@@ -215,19 +219,24 @@
 
             <div class="small-con">
 
-                <!-- <div class="row">
-                    {% for city_weather in weather_data %}
+                <div class="row">
+                    {% for city_weather in fifth_row %}
+                        
+
                         <div class="col-4">
                             <img src="{% static './img/sample.img.jpg' %}" alt="">
                             <div class="city-name">
-                                <h3>{{ city_weather.city|capfirst }}</h3>
+                                <h3>{{ city_weather.city|title}}, {{ city_weather.country|title }}</h3>
                                 <h3>{{ city_weather.temp }} &#8457;</h3>
                                 <h5>{{ city_weather.description }}</h5>
+                                
                             </div>
                         </div>
-                        {% endfor %}
+
+                        
+                    {% endfor %}
     
-                    </div> -->
+                    </div>
 
             </div>
 

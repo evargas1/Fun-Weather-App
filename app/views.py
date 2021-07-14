@@ -25,6 +25,7 @@ def index(request):
             'icon': r['weather'][0]['icon'],
             'time': r['dt'],
             'sunset': r['sys']['sunset'],
+            'country': r['sys']['country']
         }
      
         weather_data.append(city_weather)
@@ -37,6 +38,8 @@ def index(request):
         'first_row': weather_data[:4],
         'sec_row': weather_data[4:8],
         'thrid_row': weather_data[8:12],
+        'fourth_row': weather_data[12:16],
+        'fifth_row': weather_data[16:20],
 
         }
 
