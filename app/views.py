@@ -69,8 +69,16 @@ def SearchResultsView(request):
         }
      
         weather_data.append(city_weather)
-    queryset = City.objects.filter(name__icontains='Boston')
-    context = {'queryset': queryset}
+    
+
+    if request.method == 'GET':
+        query = self.request.GET.gte('q')
+        object_list = City.objects.filter(
+            Q(name__contains=query)
+        )
+        return object_list
+
+    context = {'object_list':object_list}
 
 
     return render(request, 'app/search.html', context)
