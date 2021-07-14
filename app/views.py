@@ -2,6 +2,7 @@ from django.shortcuts import render
 # from django.shortcuts import render
 import requests
 from .models import City
+from django.db.models import Q
 # Create your views here.
 
 
