@@ -36,6 +36,7 @@ def index(request):
         'weather_data': weather_data,
         'first_row': weather_data[:4],
         'sec_row': weather_data[4:8],
+        'thrid_row': weather_data[8:12],
 
         }
 
