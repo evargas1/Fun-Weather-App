@@ -6,8 +6,8 @@ from .models import City
 
 
 def index(request):
-    context = {}
-    return render(request, 'app/index.html', context)
+
+    
 
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=685feed5f1bd934d26f395f2e68fbd7f'
 
@@ -33,3 +33,5 @@ def index(request):
     context = {
         'weather_data': weather_data
         }
+
+    return render(request, 'app/index.html', context)
