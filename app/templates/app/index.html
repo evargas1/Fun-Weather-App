@@ -93,7 +93,7 @@
     
 
 
-    <div class="home_content">
+    < class="home_content">
         <div class="top-head">
             <div class="flex-side">
                 <h1>Weather   <span>Forecast</span> </h1>
@@ -114,42 +114,21 @@
 
         <div class="dif-city">
             <div class="small-con">
-
-            {% comment %} <div class="weather-info">
-    <div class="row">
-        {% for city_weather in weather_data%}
-        <div class="col-2">
-            <div class="box-sample">
-                <h1>Weather in {{ city_weather.city }} </h1>
-                <h2>Temp: {{ city_weather.temp }} </h2>
-                <h2>Desciption: {{ city_weather.description }}</h2>
-                <div class="img">
-                    <img src="https://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="">
-                </div>
-
-        </div>
-    </div>
-    {% endfor %}
-</div>
-</div> {% endcomment %}
-
-
-
                 <div class="row">
-                {% for city_weather in weather_data %}
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>{{ city_weather.city|capfirst }}</h3>
-                            <h3>{{ city_weather.temp }} &#8457;</h3>
-                            <h5>{{ city_weather.description }}</h5>
-                            <h5>{{ city_weather.time|time:"g:i:A" }}</h5>
-                            <h5>{{ city_weather.sunset }}</h5>
+                    {% for city_weather in weather_data %}
+                        <div class="col-4">
+                            <img src="{% static './img/sample.img.jpg' %}" alt="">
+                            <div class="city-name">
+                                <h3>{{ city_weather.city|capfirst }}</h3>
+                                <h3>{{ city_weather.temp }} &#8457;</h3>
+                                <h5>{{ city_weather.description }}</h5>
+                               
+                            </div>
                         </div>
+                        {% endfor %}
+    
                     </div>
-                    {% endfor %}
 
-                </div>
 
             </div>
 
@@ -158,46 +137,19 @@
             <div class="small-con">
 
                 <div class="row">
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
+                    {% for city_weather in weather_data %}
+                        <div class="col-4">
+                            <img src="{% static './img/sample.img.jpg' %}" alt="">
+                            <div class="city-name">
+                                <h3>{{ city_weather.city|capfirst }}</h3>
+                                <h3>{{ city_weather.temp }} &#8457;</h3>
+                                <h5>{{ city_weather.description }}</h5>
+                               
+                            </div>
                         </div>
+                        {% endfor %}
+    
                     </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
@@ -206,46 +158,19 @@
             <div class="small-con">
 
                 <div class="row">
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
+                    {% for city_weather in weather_data %}
+                        <div class="col-4">
+                            <img src="{% static './img/sample.img.jpg' %}" alt="">
+                            <div class="city-name">
+                                <h3>{{ city_weather.city|capfirst }}</h3>
+                                <h3>{{ city_weather.temp }} &#8457;</h3>
+                                <h5>{{ city_weather.description }}</h5>
+                                
+                            </div>
                         </div>
+                        {% endfor %}
+    
                     </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
@@ -254,46 +179,19 @@
             <div class="small-con">
 
                 <div class="row">
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
+                    {% for city_weather in weather_data %}
+                        <div class="col-4">
+                            <img src="{% static './img/sample.img.jpg' %}" alt="">
+                            <div class="city-name">
+                                <h3>{{ city_weather.city|capfirst }}</h3>
+                                <h3>{{ city_weather.temp }} &#8457;</h3>
+                                <h5>{{ city_weather.description }}</h5>
+                                
+                            </div>
                         </div>
+                        {% endfor %}
+    
                     </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
@@ -302,46 +200,18 @@
             <div class="small-con">
 
                 <div class="row">
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
+                    {% for city_weather in weather_data %}
+                        <div class="col-4">
+                            <img src="{% static './img/sample.img.jpg' %}" alt="">
+                            <div class="city-name">
+                                <h3>{{ city_weather.city|capfirst }}</h3>
+                                <h3>{{ city_weather.temp }} &#8457;</h3>
+                                <h5>{{ city_weather.description }}</h5>
+                            </div>
                         </div>
+                        {% endfor %}
+    
                     </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <img src="{% static './img/sample.img.jpg' %}" alt="">
-                        <div class="city-name">
-                            <h3>Paris</h3>
-                            <h3>Temp:
-                            </h3>
-                            <h5>Desciption:</h5>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
@@ -349,7 +219,7 @@
 
 
         </div>
-    </div>
+    
 
     
 
