@@ -165,24 +165,28 @@
 
             <div class="small-con">
 
-                <!-- <div class="row">
-                    {% for city_weather in weather_data|slice:"8:12" %}
-                        {% if forloop.counter < 4 %}
-
-                        <div class="col-4">
-                            <img src="{% static './img/sample.img.jpg' %}" alt="">
-                            <div class="city-name">
-                                <h3>{{ city_weather.city|capfirst }}</h3>
-                                <h3>{{ city_weather.temp }} &#8457;</h3>
-                                <h5>{{ city_weather.description }}</h5>
-                                
-                            </div>
-                        </div>
-
-                        {% endif %}
-                    {% endfor %}
+                <div class="small-con">
+                    <div class="row">
+                        {% for city_weather in thrid_row %}
+                            
     
-                    </div> -->
+                            <div class="col-4">
+                                <img src="{% static './img/sample.img.jpg' %}" alt="">
+                                <div class="city-name">
+                                    <h3>{{ city_weather.city|capfirst }}</h3>
+                                    <h3>{{ city_weather.temp }} &#8457;</h3>
+                                    <h5>{{ city_weather.description }}</h5>
+                                    
+                                </div>
+                            </div>
+    
+                            
+                        {% endfor %}
+        
+                        </div>
+    
+    
+                </div>
 
             </div>
 
