@@ -23,7 +23,7 @@ def index(request):
             'temp': r['main']['temp'],
             'description':r['weather'][0]['description'],
             'icon': r['weather'][0]['icon'],
-            'time': city.dt,
+            'time': r['dt'],
             'sunset': r['sys']['sunset'],
         }
      
