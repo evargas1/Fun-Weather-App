@@ -115,8 +115,8 @@
         <div class="dif-city">
             <div class="small-con">
                 <div class="row">
-                    {% for city_weather in weather_data|slice ":5" %}
-                        
+                    {% for city_weather in weather_data%}
+                        {% if forloop.counter < 5 %}
 
                         <div class="col-4">
                             <img src="{% static './img/sample.img.jpg' %}" alt="">
@@ -128,7 +128,7 @@
                             </div>
                         </div>
 
-                        
+                        {% endif %}
                     {% endfor %}
     
                     </div>
@@ -140,20 +140,24 @@
             <!-- add 30px padding -->
             <div class="small-con">
 
-                <!-- <div class="row">
+                <div class="row">
                     {% for city_weather in weather_data|slice:"4:8" %}
+                    {% if forloop.counter > 5 and < 9 %}
+
                         <div class="col-4">
                             <img src="{% static './img/sample.img.jpg' %}" alt="">
                             <div class="city-name">
                                 <h3>{{ city_weather.city|capfirst }}</h3>
                                 <h3>{{ city_weather.temp }} &#8457;</h3>
                                 <h5>{{ city_weather.description }}</h5>
-                               
+                                
                             </div>
                         </div>
+
+                        {% endif %}
                         {% endfor %}
     
-                    </div> -->
+                    </div>
 
             </div>
 
