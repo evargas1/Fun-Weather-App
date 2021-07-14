@@ -115,6 +115,24 @@
         <div class="dif-city">
             <div class="small-con">
 
+            {% comment %} <div class="weather-info">
+    <div class="row">
+        {% for city_weather in weather_data%}
+        <div class="col-2">
+            <div class="box-sample">
+                <h1>Weather in {{ city_weather.city }} </h1>
+                <h2>Temp: {{ city_weather.temp }} </h2>
+                <h2>Desciption: {{ city_weather.description }}</h2>
+                <div class="img">
+                    <img src="https://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="">
+                </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div> {% endcomment %}
+
                 <div class="row">
                     <div class="col-4">
                         <img src="{% static './img/sample.img.jpg' %}" alt="">
