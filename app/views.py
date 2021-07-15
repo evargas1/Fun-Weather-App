@@ -49,41 +49,15 @@ def index(request):
 
 
 def SearchResultsView(request):
-
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=685feed5f1bd934d26f395f2e68fbd7f'
-
-
-    cities = City.objects.all()
-
-    weather_data = []
-    for city in cities:
-        r = requests.get(url.format(city)).json()
-
-        city_weather = {
-            'city': city.name,
-            'temp': r['main']['temp'],
-            'description':r['weather'][0]['description'],
-            'icon': r['weather'][0]['icon'],
-            'time': r['dt'],
-            'sunset': r['sys']['sunset'],
-            'country': r['sys']['country']
-        }
-     
-        weather_data.append(city_weather)
     
-
-    if request.method == 'GET':
-        query = request.GET.get('q')
-        object_list = City.objects.filter(
-            Q(name__contains=query)
-        )
-        return object_list
-
-    context = {'object_list':object_list}
+    if request.method == "POST":
+        searched = request.POST['searched']
+        return render(request, 'app/search.html', {'searched': searched})
+    else:
+        return render(request, 'app/search.html', {})
 
 
-    return render(request, 'app/search.html', context)
-
+# you always need three things with django views urls and a template
 
 def prac(request):
     context = {}

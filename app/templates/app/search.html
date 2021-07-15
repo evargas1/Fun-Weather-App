@@ -7,6 +7,13 @@
     <title>search</title>
 </head>
 <body>
-    <h1>Searched city :{{ object_list }}</h1>
+    <!-- will render if requets == post -->
+
+        {% if searched %}
+            <h1>You searched for </h1>
+        {% else %}
+            <h1>hey you forget to search for something</h1>
+        {% endif %}
+
 </body>
 </html>
