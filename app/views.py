@@ -54,13 +54,13 @@ def index(request):
 def SearchResultsView(request):
     
     if request.method == "POST":
-        searched = request.POST['searched']
+        searched = request.POST.get('searched', False)
         # not case senstive
         looking_city = City.objects.filter(name__contains=searched)
         # why are we using the variable name because that is the name we gave it in models.py
         return render(request, 'app/search.html', {'searched': searched, 'looking_city': looking_city})
 
-        
+
     return render(request, 'app/search.html', {'searched': searched, 'looking_city': looking_city})
 
 
