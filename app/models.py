@@ -1,4 +1,6 @@
 from django.db import models
+STATIC_URL = '/static/'
+STATIC_ROOT = '/tutorial/site/public/static'
 
 # Create your models here.
 class City(models.Model):
