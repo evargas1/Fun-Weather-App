@@ -21,15 +21,18 @@ def index(request):
 
         city_weather = {
             'city': city.name,
+            'main_image': city.city_image,
             'temp': r['main']['temp'],
             'description':r['weather'][0]['description'],
-            'icon': r['weather'][0]['icon'],
+            # 'icon': r['weather'][0]['icon'],
             'time': r['dt'],
             'sunset': r['sys']['sunset'],
             'country': r['sys']['country']
         }
      
         weather_data.append(city_weather)
+        # to render out the image it will be 
+        # weather_data.city_image
 
 
     # print(city_weather)
@@ -52,7 +55,10 @@ def SearchResultsView(request):
     
     if request.method == "POST":
         searched = request.POST['searched']
-        return render(request, 'app/search.html', {'searched': searched})
+        # not case senstive
+        looking_city = City.objects.filter(name__contains=searched)
+        # why are we using the variable name because that is the name we gave it in models.py
+        return render(request, 'app/search.html', {'searched': searched, 'looking_city': looking_city})
     else:
         return render(request, 'app/search.html', {})
 
