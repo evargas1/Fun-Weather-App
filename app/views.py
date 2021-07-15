@@ -53,24 +53,21 @@ def index(request):
 
 def SearchResultsView(request):
     
-    # if request.method == "POST":
-    #     searched = request.POST.get('searched', False)
-    #     # not case senstive
-    #     looking_city = City.objects.filter(name__contains=searched)
-    #     # why are we using the variable name because that is the name we gave it in models.py
-    #     return render(request, 'app/search.html', {'searched': searched, 'looking_city': looking_city})
+    if request.method == "POST":
+        searched = request.POST.get('searched', False)
+        # not case senstive
+        looking_city = City.objects.filter(name__contains=searched)
+        # why are we using the variable name because that is the name we gave it in models.py
+        return looking_city
 
 
-    return render(request, 'app/search.html', {})
+    return render(request, 'app/search.html', {'looking_city': looking_city})
 
 
 # you always need three things with django views urls and a template
 
 def prac(request):
 
-    if request.method == "POST":
-        searched = request.POST.get('searched', False)
-        # not case senstive
-        looking_city = City.objects.filter(name__contains=searched)
-    context = {'looking_city': looking_city}
+    
+    context = {}
     return render(request, 'app/prac.html', context)
