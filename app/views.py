@@ -58,7 +58,7 @@ def SearchResultsView(request):
         # not case senstive
         looking_city = City.objects.filter(name__icontains=searched)
         # why are we using the variable name because that is the name we gave it in models.py
-        return looking_city
+        return render(request, 'app/search.html', {'looking_city': looking_city})
 
 
     return render(request, 'app/search.html', {'looking_city': looking_city})
