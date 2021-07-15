@@ -72,5 +72,5 @@ def prac(request):
         searched = request.POST.get('searched', False)
         # not case senstive
         looking_city = City.objects.filter(name__contains=searched)
-    context = {'searched': searched, 'looking_city': looking_city}
+    context = {'looking_city': looking_city}
     return render(request, 'app/prac.html', context)
