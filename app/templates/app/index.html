@@ -119,7 +119,7 @@
                         
 
                         <div class="col-4">
-                            <img src="{% static './img/sample.img.jpg' %}" alt="">
+                            <img src="{{ city_weather.city_image.url }}" alt="">
                             <div class="city-name">
                                 <h3>{{ city_weather.city|capfirst }}, {{ city_weather.country|upper }}</h3>
                                 <h3>{{ city_weather.temp }} &#8457;</h3>
