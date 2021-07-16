@@ -62,7 +62,7 @@ def SearchResultsView(request):
         return render(request, 'app/search.html', {'looking_city': looking_city})
 
 
-    return render(request, 'app/search.html', {'looking_city': looking_city})
+    return render(request, 'app/search.html', {})
 
 
 # you always need three things with django views urls and a template
