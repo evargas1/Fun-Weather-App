@@ -11,14 +11,16 @@
 <!-- we will go back to actually render out the block with the image -->
 {% if looking_city != None %}
     {% for main in looking_city %}
+        {% if len(main) > 0 %}
        
-        <h3> {{ main }}</h3>
+            <h3> {{ main }}</h3>
+        {% else %}
+            <h1>We cant find your city </h1>
+        
         
         
     {% endfor %}
-{% else %}
 
-    <h3>This is the city you looked for {{ searched }}</h3>
 
 {% endif %}
 
