@@ -13,14 +13,12 @@
     {% for main in looking_city %}
         <h3> {{ main }}</h3>
     {% endfor %}
-
-{% endif %}
-
-
-{% if looking_city == None %}
+{% else %} 
     <h2>Seems we dont have your city</h2>
 
 {% endif %}
+
+
 
 
 </body>
