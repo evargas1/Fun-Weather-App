@@ -11,7 +11,7 @@
 <!-- we will go back to actually render out the block with the image -->
 {% if looking_city != None %}
     {% for main in looking_city %}
-        {% if len(main) > 0 %}
+        {% if main != None %}
        
             <h3> {{ main }}</h3>
         {% else %}
