@@ -3,6 +3,9 @@ from django.shortcuts import render
 import requests
 from app.models import City
 from django.db.models import Q
+from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 # Create your views here.
 
 
@@ -62,6 +65,9 @@ def SearchResultsView(request):
         # print(looking_city)
         # why are we using the variable name because that is the name we gave it in models.py
         return render(request, 'app/search.html', {'looking_city': looking_city, 'searched': searched})
+
+    if looking_city == None:
+        return HttpResponseRedirect(reverse('prac'))
 
 
     return render(request, 'app/search.html', {'looking_city': looking_city, 'searched': searched})
