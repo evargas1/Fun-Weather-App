@@ -11,10 +11,14 @@
 <!-- we will go back to actually render out the block with the image -->
 {% if looking_city != None %}
     {% for main in looking_city %}
+        {% if main != None %}
         <h3> {{ main }}</h3>
+        {% else %}
+        <h3>Seems we dont have a city </h3>
+        {% endif %}
+        
     {% endfor %}
-{% else %} 
-    <h2>Seems we dont have your city</h2>
+
 
 {% endif %}
 
