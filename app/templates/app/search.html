@@ -27,8 +27,15 @@
 
 
 {% for main in looking_city %}
-    {{ main }}
+    <!-- {{ main }} -->
+    {% if main == 0 %}
+        <h2>Seems we dont have your city </h2>
+    {% else %}
+        {{ main }}
+
 {% endfor %}
+
+
 
 <!-- {% for city in looking_city %} 
     {% if city == None %}
