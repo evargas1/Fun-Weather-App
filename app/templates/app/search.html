@@ -13,8 +13,8 @@
     {% for main in looking_city %}
         <h3> {{ main }}</h3>
     {% endfor %}
-{% else %}
-<h2>Seems we dont have {{ searched }}. Feel free to add it and see the Weather.</h2>
+{% elseif %}
+    <h2>Seems we dont have {{ searched }}. Feel free to add it and see the Weather.</h2>
 {% endif %}
 
 </body>
