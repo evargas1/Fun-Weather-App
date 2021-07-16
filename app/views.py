@@ -61,10 +61,10 @@ def SearchResultsView(request):
         looking_city = City.objects.filter(name__icontains=searched)
         # print(looking_city)
         # why are we using the variable name because that is the name we gave it in models.py
-        return render(request, 'app/search.html', {'looking_city': looking_city})
+        return render(request, 'app/search.html', {'looking_city': looking_city, 'searched': searched})
 
 
-    return render(request, 'app/search.html', {'looking_city': looking_city})
+    return render(request, 'app/search.html', {'looking_city': looking_city, 'searched': searched})
 
 
 # you always need three things with django views urls and a template
