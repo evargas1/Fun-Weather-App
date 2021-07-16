@@ -16,15 +16,17 @@
         
         
     {% endfor %}
+{% else %}
 
+    <h3>This is the city you looked for {{ searched }}</h3>
 
 {% endif %}
 
-{% for city in looking_city %} 
+<!-- {% for city in looking_city %} 
     {% if city == None %}
         <h3>Seems we dont have your city </h3>
     {% endif %}
-{% endfor %}
+{% endfor %} -->
 
 
 
