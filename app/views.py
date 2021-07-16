@@ -1,7 +1,7 @@
 from django.shortcuts import render
 # from django.shortcuts import render
 import requests
-from .models import City
+from app.models import City
 from django.db.models import Q
 # Create your views here.
 
@@ -56,7 +56,8 @@ def SearchResultsView(request):
     if request.method == "POST":
         searched = request.POST['searched']
         # not case senstive
-        looking_city = City.objects.filter(name__icontains=searched)
+        looking_city = City.objects.filter(name__icontains='searched')
+        print("Searched value: " + looking_city)
         # why are we using the variable name because that is the name we gave it in models.py
         return render(request, 'app/search.html', {'looking_city': looking_city})
 
@@ -67,7 +68,5 @@ def SearchResultsView(request):
 # you always need three things with django views urls and a template
 
 def prac(request):
-
-    
     context = {}
     return render(request, 'app/prac.html', context)
