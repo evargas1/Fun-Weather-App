@@ -9,7 +9,7 @@
 <body>
     <!-- will render if requets == post -->
 <!-- we will go back to actually render out the block with the image -->
-{% if looking_city != None %}
+<!-- {% if looking_city != None %}
     {% for main in looking_city %}
         {% if main != None %}
        
@@ -23,7 +23,12 @@
     {% endfor %}
 
 
-{% endif %}
+{% endif %} -->
+
+
+{% for main in looking_city %}
+    {{ main }}
+{% endfor %}
 
 <!-- {% for city in looking_city %} 
     {% if city == None %}
