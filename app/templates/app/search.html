@@ -16,10 +16,13 @@
 
 {% endif %}
 
-{% if looking_city == None %}
+{% for city in looking_city }
+    {% if len(city) <= 0}
     <h1>Sorry it seems the city you searched is not in our list </h1>
     <h2>Feel free to add it in the homepage and view current weather</h2>
-{% endif %}
+    {% endif %}
+    
+{% endfor %}
 
 </body>
 </html>

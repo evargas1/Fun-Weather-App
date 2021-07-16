@@ -66,9 +66,6 @@ def SearchResultsView(request):
         # why are we using the variable name because that is the name we gave it in models.py
         return render(request, 'app/search.html', {'looking_city': looking_city, 'searched': searched})
 
-    if looking_city == None:
-        return HttpResponseRedirect(reverse('prac'))
-
 
     return render(request, 'app/search.html', {'looking_city': looking_city, 'searched': searched})
 
