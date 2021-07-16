@@ -9,17 +9,9 @@
 <body>
     <!-- will render if requets == post -->
 <!-- we will go back to actually render out the block with the image -->
-        {% if searched %}
-            <h1>You searched for </h1>
-            <br>
-            {% for city in looking_city %}
-                <h5>{{ city }}</h5>
-            {% endfor %}
-            <!-- might need to change the rendering out of this loop to city.name -->
-            <!-- not sure test it and see what we get -->
-        {% else %}
-            <h1>hey you forget to search for something</h1>
-        {% endif %}
+{% for main in looking_city %}
+    <h3> {{ main }}</h3>
+{% endfor %}
 
 </body>
 </html>
