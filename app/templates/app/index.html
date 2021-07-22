@@ -317,7 +317,7 @@
                         
 
                         <div class="col-4">
-                        {% if city_weather.main_image.url %}
+                        {% if city_weather.main_image %}
                             <img src="{{ city_weather.main_image.url }}" alt="">
                         {% else %}
                             <img src="{% static './img/sample.img.jpg' %}" alt="">
