@@ -71,7 +71,7 @@ def SearchResultsView(request):
 # you always need three things with django views urls and a template
 
 def prac(request):
-    if request.method == 'POST' and request.FILES['city_image']:
+    if request.method == 'POST' and request.FILES:
         # print(request.POST)
         form = CityForm(request.POST, request.FILES)
         # becaise we are also looking for a file git
