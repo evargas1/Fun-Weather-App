@@ -345,7 +345,11 @@
                         
 
                         <div class="col-4">
+                            {% if city_weather.main_image %}
                             <img src="{{ city_weather.main_image.url }}" alt="">
+                            {% else %}
+                            <img src="{% static './img/sample.img.jpg' %}" alt="">
+                            {% endif %}
                             <div class="city-name">
                                 <h3>{{ city_weather.city|title}}, {{ city_weather.country|upper }}</h3>
                                 <h3>{{ city_weather.temp }} &#8457;</h3>
