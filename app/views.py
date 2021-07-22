@@ -59,19 +59,8 @@ def index(request):
 
 def SearchResultsView(request):
     
-    if request.method == "POST":
-        searched = request.POST['searched']
-        # prints to test
-        # print(searched)
-        # not case senstive
-        looking_city = City.objects.filter(name__icontains=searched)
-        # print(looking_city)
-        # why are we using the variable name because that is the name we gave it in models.py
-        return render(request, 'app/search.html', {'looking_city': looking_city, 'searched': searched, 'main': main})
-        
-
-
-    return render(request, 'app/search.html', {'looking_city': looking_city, 'searched': searched})
+    context = {}
+    return render(request, 'app/search.html', context)
 
 
 # you always need three things with django views urls and a template
@@ -88,7 +77,7 @@ def prac(request):
             # (2) send an email ####
             # (3) return search result
             # (4) upload a file
-            return HttpResponseRedirect(reverse('correct'))
+            return HttpResponseRedirect(reverse('search'))
         else:
             messages.add_message(request, messages.INFO, 'We already have this city! Return to Homepage to view')
     else:
@@ -98,4 +87,4 @@ def prac(request):
 
     form = CityForm()
     context = {'form': form}
-    return render(request, 'weather/prac.html', context)
+    return render(request, 'app/prac.html', context)
