@@ -240,6 +240,127 @@
 
             </div>
 
+            <div class="small-con">
+
+                <div class="row">
+                    {% for city_weather in sixth_row %}
+                        
+
+                        <div class="col-4">
+                            <img src="{{ city_weather.main_image.url }}" alt="">
+                            <div class="city-name">
+                                <h3>{{ city_weather.city|title}}, {{ city_weather.country|upper }}</h3>
+                                <h3>{{ city_weather.temp }} &#8457;</h3>
+                                <h5>{{ city_weather.description }}</h5>
+                                
+                            </div>
+                        </div>
+
+                        
+                    {% endfor %}
+    
+                    </div>
+
+            </div>
+
+
+            <div class="small-con">
+
+                <div class="row">
+                    {% for city_weather in seventh_row %}
+                        
+
+                        <div class="col-4">
+                            <img src="{{ city_weather.main_image.url }}" alt="">
+                            <div class="city-name">
+                                <h3>{{ city_weather.city|title}}, {{ city_weather.country|upper }}</h3>
+                                <h3>{{ city_weather.temp }} &#8457;</h3>
+                                <h5>{{ city_weather.description }}</h5>
+                                
+                            </div>
+                        </div>
+
+                        
+                    {% endfor %}
+    
+                    </div>
+
+            </div>
+
+             <div class="small-con">
+
+                <div class="row">
+                    {% for city_weather in eight_row %}
+                        
+
+                        <div class="col-4">
+                            <img src="{{ city_weather.main_image.url }}" alt="">
+                            <div class="city-name">
+                                <h3>{{ city_weather.city|title}}, {{ city_weather.country|upper }}</h3>
+                                <h3>{{ city_weather.temp }} &#8457;</h3>
+                                <h5>{{ city_weather.description }}</h5>
+                                
+                            </div>
+                        </div>
+
+                        
+                    {% endfor %}
+    
+                    </div>
+
+            </div>
+
+            <div class="small-con">
+
+                <div class="row">
+                    {% for city_weather in ninth_row %}
+                        
+
+                        <div class="col-4">
+                            <img src="{{ city_weather.main_image.url }}" alt="">
+                            <div class="city-name">
+                                <h3>{{ city_weather.city|title}}, {{ city_weather.country|upper }}</h3>
+                                <h3>{{ city_weather.temp }} &#8457;</h3>
+                                <h5>{{ city_weather.description }}</h5>
+                                
+                            </div>
+                        </div>
+
+                        
+                    {% endfor %}
+    
+                    </div>
+
+            </div>
+
+
+            <div class="small-con">
+
+                <div class="row">
+                    {% for city_weather in tenth_row %}
+                        
+
+                        <div class="col-4">
+                            <img src="{{ city_weather.main_image.url }}" alt="">
+                            <div class="city-name">
+                                <h3>{{ city_weather.city|title}}, {{ city_weather.country|upper }}</h3>
+                                <h3>{{ city_weather.temp }} &#8457;</h3>
+                                <h5>{{ city_weather.description }}</h5>
+                                
+                            </div>
+                        </div>
+
+                        
+                    {% endfor %}
+    
+                    </div>
+
+            </div>
+
+            {% comment %} this was the tenth row {% endcomment %}
+
+
+
 
 
 

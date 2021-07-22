@@ -50,6 +50,11 @@ def index(request):
         'thrid_row': weather_data[8:12],
         'fourth_row': weather_data[12:16],
         'fifth_row': weather_data[16:20],
+        'sixth_row': weather_data[20:24],
+        'seventh_row': weather_data[24:28],
+        'eight_row': weather_data[28:32],
+        'ninth_row': weather_data[32:36],
+        'tenth_row': weather_data[36:40],
 
         }
 
