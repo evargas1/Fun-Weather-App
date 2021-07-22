@@ -7,6 +7,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 # Create your views here.
+from .forms import CityForm
+from django.urls import reverse
+from django.contrib import messages
 
 
 def index(request):
@@ -64,7 +67,8 @@ def SearchResultsView(request):
         looking_city = City.objects.filter(name__icontains=searched)
         # print(looking_city)
         # why are we using the variable name because that is the name we gave it in models.py
-        return render(request, 'app/search.html', {'looking_city': looking_city, 'searched': searched})
+        return render(request, 'app/search.html', {'looking_city': looking_city, 'searched': searched, 'main': main})
+        
 
 
     return render(request, 'app/search.html', {'looking_city': looking_city, 'searched': searched})
@@ -73,5 +77,25 @@ def SearchResultsView(request):
 # you always need three things with django views urls and a template
 
 def prac(request):
-    context = {}
-    return render(request, 'app/prac.html', context)
+    if request.method == 'POST':
+        # print(request.POST)
+        form = CityForm(request.POST)
+        if form.is_valid():
+            
+            form.save()
+            # some sort of action needs to be performed here
+            # (1) save data
+            # (2) send an email ####
+            # (3) return search result
+            # (4) upload a file
+            return HttpResponseRedirect(reverse('correct'))
+        else:
+            messages.add_message(request, messages.INFO, 'We already have this city! Return to Homepage to view')
+    else:
+        form = CityForm()
+        
+    # return HttpResponseRedirect(reverse('correct')) 
+
+    form = CityForm()
+    context = {'form': form}
+    return render(request, 'weather/prac.html', context)
