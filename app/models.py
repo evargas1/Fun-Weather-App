@@ -4,7 +4,7 @@ STATIC_ROOT = '/tutorial/site/public/static'
 
 # Create your models here.
 class City(models.Model):
-    name = models.CharField(max_length=25, unique=True)
+    name = models.CharField(max_length=25)
     city_image = models.ImageField(upload_to='./media/', blank=True, null=True)
     # we will see how this works 
 
