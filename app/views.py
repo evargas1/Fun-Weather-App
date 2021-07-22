@@ -73,7 +73,8 @@ def SearchResultsView(request):
 def prac(request):
     if request.method == 'POST':
         # print(request.POST)
-        form = CityForm(request.POST)
+        form = CityForm(request.POST, request.FILES)
+        # becaise we are also looking for a file git
         if form.is_valid():
             
             form.save()
