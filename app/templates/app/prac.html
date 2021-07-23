@@ -121,12 +121,12 @@
 
         <div class="dif-city">
         <h1>Search</h1>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
 
             {% csrf_token %}
 
             <div class="input-box" style="padding: 15px;">
-                <label for="id_name">Username: </label>
+                <label for="id_name">City: </label>
                 <input id="id_name" type="text" name="name">
               </div>
 
@@ -135,7 +135,7 @@
                 <input id="id_city_image" type="file" name="image">
               </div>
 
-            <input type="submit" value="Submit" enctype="multipart/form-data">
+            <input type="submit" value="Submit" >
         </form>
         <!-- {% if messages %}
             {% for mes in messages %}

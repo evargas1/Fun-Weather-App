@@ -93,8 +93,8 @@ def prac(request):
         return HttpResponseRedirect(reverse('search'))
         # else:
         #     messages.add_message(request, messages.INFO, 'We already have this city! Return to Homepage to view')
-    else:
-        form = CityForm()
+    # else:
+    #     form = CityForm()
         
     # return HttpResponseRedirect(reverse('correct')) 
 
