@@ -79,7 +79,7 @@ def prac(request):
         # this was taken from the docs
         # becaise we are also looking for a file git
         if form.is_valid():
-            instance = City(file_field=request.FILES['city_image'])
+            instance = City(image_field=request.FILES['city_image'])
             instance.save()
             form.save()
             # some sort of action needs to be performed here
