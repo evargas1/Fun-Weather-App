@@ -73,14 +73,11 @@ def SearchResultsView(request):
 
 def prac(request):
     if request.method == 'POST':
-        # print(request.POST)
-  
-        form = CityForm(request.POST, request.FILES)
         # this was taken from the docs
         # becaise we are also looking for a file git
+        form = CityForm(request.POST, request.FILES)
         if form.is_valid():
-            instance = City(image_field=request.FILES['image'])
-            instance.save()
+            form.save()
             # form.save()
             # some sort of action needs to be performed here
             # (1) save data
