@@ -1,15 +1,321 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>search</title>
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+<!-- will be adding my form styling here -->
+<style>
+    
+
+    .new-fun-city{
+        padding: 10px;
+        align-items: center !important;
+        text-align: center;
+        margin: auto;
+        position: relative;
+        justify-items: center;
+        width: max-content;
+        
+    }
+    .form-area{
+        text-align: center;
+        min-width: 300px;
+        max-width: max-content;
+        box-shadow: 12px 12px 2px 1px rgba(15, 15, 15, 0.2);
+        padding: 20px;
+    }
+    .main-from-tit h1{
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+    
+    }
+    .input-box{
+        width: max-content;
+    
+    }
+    .input-box label{
+        font-size: 20px;
+    }
+    .input-box input{
+        padding: 10px 15px;
+        border: 1px;
+        border-color: rgb(180, 176, 219);
+        border-radius: 10px;
+        background-color: rgb(236, 227, 227);
+        font-size: 18px;
+        letter-spacing: 1px;
+        margin: 10px;
+        width: 300px;
+    }
+    .submit-butt{
+        background-color: rgb(134, 189, 120);
+        border: none;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 10px;
+        width: 100px;
+        margin: 15px;
+        font-size: 18px !important;
+        letter-spacing: 1px;
+        transition: 0.5s;
+    }
+    .submit-butt:hover{
+        background-color: rgb(53, 109, 63);
+        color: #fff;
+    }
+    .add-city{
+        background-color: rgb(119, 190, 119) ;
+        border: none;
+        border-style: none;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 400;
+
+    }
+    .dropdown{
+        border-radius: 12px;
+        margin-left: 5px;
+    }
+    .go-back{
+        background-color: rgb(151, 135, 135);
+        border-radius: 10px;
+        width: 150px;
+        text-align: center;
+    }
+    .go-back button{
+        padding: 10px 15px;
+        background-color: rgb(151, 135, 135);
+        border: none;
+        text-decoration: none;
+        color: #fff;
+        letter-spacing: 1px;
+        width: 150px;
+        border-radius: 10px;
+    
+    }
+    .go-back button:hover{
+        background-color:rgb(99, 85, 85) ;
+    }
+
+    .add{
+        background-color: rgb(21, 66, 38);
+        border-radius: 10px;
+        width: 80px;
+        text-align: center;
+        display: inline-block;
+    }
+    .add button{
+        padding: 5px 10px;
+        background-color: rgb(21, 66, 38);
+        border: none;
+        text-decoration: none;
+        color: #fff;
+        letter-spacing: 1px;
+        width: 80px;
+        border-radius: 10px;
+    
+    }
+    .add button:hover{
+        background-color:rgb(21, 66, 38) ;
+    }
+ 
+ 
+</style>
+
+
+
 <body>
+    <div class="sidebar" id="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <!-- sysmobol -->
+                <i onclick="myFunction()" class='bx bx-world'></i>
+                <div class="logo_name">
+                    Tely
+                </div>
+                
+                
+            </div>
+            <!-- menu button -->
+            <i class='bx bx-menu' id="btn" ></i>
+        </div>
+       
+        
+            <ul class="nav_list">
+                <li>
+                    
+                        <i class='bx bx-search-alt-2 bx-search bx-md'></i>
+                        <input type="text" name="" id="" placeholder="Search...">
+                        <span class="tooltip">Search</span>
 
-    <h1>Added succefully return to homepage</h1>
+                    
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxl-dropbox  bx-md'></i>
+                        <span class="links_name">Dashborad</span>
+
+                    </a>
+                    <span class="tooltip">Dashborad</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-user bx-md'></i>
+                        <span class="links_name ">User</span>
+
+                    </a>
+                    <span class="tooltip">User</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-message-square-detail  bx-md'></i>
+                        <span class="links_name">Messages</span>
+
+                    </a>
+                    <span class="tooltip">Messages</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-pie-chart-alt-2 bx-md'  ></i>
+                        <span class="links_name">Analytics</span>
+
+                    </a>
+                    <span class="tooltip">Analytics</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxl-ok-ru bx-md'></i>
+                        <span class="links_name">About us</span>
+
+                    </a>
+                    <span class="tooltip">About us</span>
+                </li>
+            </ul>
+            <div class="profile_content">
+                <div class="profile">
+                    <div class="profile_details">
+                        <img src="./img/sample.img.jpg" alt="">
+                        <div class="name_job">
+                            <div class="name">Merryflower</div>
+                            <div class="job">Web Designer</div>
+                        </div>
+                    </div>
+                    <!-- logout icon -->
+                    <i class='bx bx-log-out bx-md' id="log_out"></i>
+                </div>
+            </div>
+        </div>
+    
 
 
+    <div class="home_content">
+        <div class="top-head">
+            <div class="flex-side">
+                <h1>Weather   <span>Forecast</span> </h1>
+            <div class="search-sec" onclick="haveclass()">
+                <i class='bx bx-search-alt-2 bx-search bx-sm bx-w' id="disapp"></i>
+            <input style="padding-left: 15px;" type="text" name="" id="" placeholder="       Search...">
+            
+            
+            <div class="add">
+                <a href="{% url 'prac' %}"><button>Add a City &#x2b; </button></a>
+              </div>
+            </div>
+            
+            </div>
+
+        </div>
+        
+
+
+        <div class="dif-city">
+        
+        <div class="new-fun-city">
+            <div class="go-back">
+                <a href="{% url 'index' %}"><button>Homepage</button></a>
+              </div>
+            <h1>Great we have added your new city! </h1>
+          </div>
+        <!-- {% if messages %}
+            {% for mes in messages %}
+                <h1>Hey {{ mes }}</h1>
+            {% endfor %}
+        {% endif %} -->
+
+
+
+
+        </div>
+    </div>
+    
+
+    
+
+    <script>
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+        let searchBtn = document.querySelector(".bx-search");
+
+        btn.onclick = function(){
+            sidebar.classList.toggle("active");
+        }
+       
+        searchBtn.onclick = function(){
+            sidebar.classList.toggle("active");
+        }
+
+    </script>
+  
+
+    <script>
+
+        function haveclass() {
+            var element = document.getElementById("disapp");
+            element.classList.add("none-seen");
+          }
+
+    </script>
+
+    <!-- <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script> -->
+
+    <script>
+
+    function myFunction() {
+        var element, name, arr;
+        element = document.getElementById("sidebar");
+        name = "active";
+        arr = element.className.split(" ");
+        if (arr.indexOf(name) == -1) {
+          element.className += " " + name;
+        }
+      }
+    </script>
 </body>
 </html>
