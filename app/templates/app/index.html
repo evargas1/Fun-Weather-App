@@ -114,12 +114,17 @@
 
         <div class="dif-city">
             <div class="small-con">
+                {% if first_row %}
                 <div class="row">
                     {% for city_weather in first_row %}
                         
 
                         <div class="col-4">
-                            <img src="{{ city_weather.main_image.url }}" alt="">
+                            {% if city_weather.main_image %}
+                                <img src="{{ city_weather.main_image.url }}" alt="">
+                                {% else %}
+                                <img src="{% static './img/sample.img.jpg' %}" alt="">
+                                {% endif %}
                             <div class="city-name">
                                 <h3>{{ city_weather.city|capfirst }}, {{ city_weather.country|upper }}</h3>
                                 <h3>{{ city_weather.temp }} &#8457;</h3>
@@ -133,19 +138,24 @@
     
                     </div>
 
-
+            {% endif %}
             </div>
 
            
             <!-- add 30px padding -->
             <div class="small-con">
+                {% if sec_row %}
 
                 <div class="row">
                     {% for city_weather in sec_row %}
                         
 
                         <div class="col-4">
-                            <img src="{{ city_weather.main_image.url }}" alt="">
+                                {% if city_weather.main_image %}
+                                <img src="{{ city_weather.main_image.url }}" alt="">
+                                {% else %}
+                                <img src="{% static './img/sample.img.jpg' %}" alt="">
+                                {% endif %}
                             <div class="city-name">
                                 <h3>{{ city_weather.city|capfirst }}, {{ city_weather.country|upper }}</h3>
                                 <h3>{{ city_weather.temp }} &#8457;</h3>
@@ -158,20 +168,24 @@
                     {% endfor %}
     
                     </div>
-
+            {% endif %}
             </div>
 
 
 
             <div class="small-con">
 
-                <div class="small-con">
+            {%if thrid_row %}
                     <div class="row">
                         {% for city_weather in thrid_row %}
                             
     
                             <div class="col-4">
+                                {% if city_weather.main_image %}
                                 <img src="{{ city_weather.main_image.url }}" alt="">
+                                {% else %}
+                                <img src="{% static './img/sample.img.jpg' %}" alt="">
+                                {% endif %}
                                 <div class="city-name">
                                     <h3>{{ city_weather.city|capfirst }}, {{ city_weather.country|upper }}</h3>
                                     <h3>{{ city_weather.temp }} &#8457;</h3>
@@ -186,20 +200,25 @@
                         </div>
     
     
-                </div>
+                {% endif %}
 
             </div>
 
 
 
             <div class="small-con">
+                {% if fourth_row %}
 
                 <div class="row">
                     {% for city_weather in fourth_row %}
                         
 
                         <div class="col-4">
+                            {% if city_weather.main_image %}
                             <img src="{{ city_weather.main_image.url }}" alt="">
+                            {% else %}
+                            <img src="{% static './img/sample.img.jpg' %}" alt="">
+                            {% endif %}
                             <div class="city-name">
                                 <h3>{{ city_weather.city|capfirst }}, {{ city_weather.country|upper }}</h3>
                                 <h3>{{ city_weather.temp }} &#8457;</h3>
@@ -212,7 +231,7 @@
                     {% endfor %}
     
                     </div>
-
+                {% endif %}
             </div>
 
 
@@ -225,7 +244,11 @@
                         
 
                         <div class="col-4">
+                            {% if city_weather.main_image %}
                             <img src="{{ city_weather.main_image.url }}" alt="">
+                            {% else %}
+                            <img src="{% static './img/sample.img.jpg' %}" alt="">
+                            {% endif %}
                             <div class="city-name">
                                 <h3>{{ city_weather.city|title}}, {{ city_weather.country|upper }}</h3>
                                 <h3>{{ city_weather.temp }} &#8457;</h3>
