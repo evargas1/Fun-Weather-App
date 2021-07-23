@@ -8,5 +8,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('search/', views.SearchResultsView, name='search'),
     path('prac/', views.prac, name='prac'),
-    path(r'^delete/(?P<id>\d+)/$', views.city_delete, name='city_delete'),
+    path(r'^city_delete/(?P<id>\d+)/$', views.city_delete, name='city_delete'),
 ]
