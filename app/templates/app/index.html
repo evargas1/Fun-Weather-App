@@ -218,6 +218,7 @@
 
 
             <div class="small-con">
+                {% if fifth_row %}
 
                 <div class="row">
                     {% for city_weather in fifth_row %}
@@ -237,10 +238,10 @@
                     {% endfor %}
     
                     </div>
-
+                    {% endif %}
             </div>
 
-            <div class="small-con">
+            <!-- <div class="small-con">
 
                 <div class="row">
                     {% for city_weather in sixth_row %}
@@ -261,10 +262,10 @@
     
                     </div>
 
-            </div>
+            </div> -->
 
 
-            <div class="small-con">
+            <!-- <div class="small-con">
 
                 <div class="row">
                     {% for city_weather in seventh_row %}
@@ -285,9 +286,10 @@
     
                     </div>
 
-            </div>
+            </div> -->
 
              <div class="small-con">
+                 {% if eight_row %}
 
                 <div class="row">
                     {% for city_weather in eight_row %}
@@ -307,7 +309,7 @@
                     {% endfor %}
     
                     </div>
-
+            {% endif %}
             </div>
 
             <div class="small-con">
@@ -337,32 +339,34 @@
 
             </div>
 
-
+            
             <div class="small-con">
+            {% if tenth_row %}
 
                 <div class="row">
-                    {% for city_weather in tenth_row %}
-                        
 
-                        <div class="col-4">
-                            {% if city_weather.main_image %}
-                            <img src="{{ city_weather.main_image.url }}" alt="">
-                            {% else %}
-                            <img src="{% static './img/sample.img.jpg' %}" alt="">
-                            {% endif %}
-                            <div class="city-name">
-                                <h3>{{ city_weather.city|title}}, {{ city_weather.country|upper }}</h3>
-                                <h3>{{ city_weather.temp }} &#8457;</h3>
-                                <h5>{{ city_weather.description }}</h5>
-                                
+                        {% for city_weather in tenth_row %}
+                            
+
+                            <div class="col-4">
+                                {% if city_weather.main_image %}
+                                <img src="{{ city_weather.main_image.url }}" alt="">
+                                {% else %}
+                                <img src="{% static './img/sample.img.jpg' %}" alt="">
+                                {% endif %}
+                                <div class="city-name">
+                                    <h3>{{ city_weather.city|title}}, {{ city_weather.country|upper }}</h3>
+                                    <h3>{{ city_weather.temp }} &#8457;</h3>
+                                    <h5>{{ city_weather.description }}</h5>
+                                    
+                                </div>
                             </div>
-                        </div>
 
-                        
-                    {% endfor %}
+                            
+                        {% endfor %}
     
                     </div>
-
+            {% endif %}
             </div>
 
             {% comment %} this was the tenth row {% endcomment %}

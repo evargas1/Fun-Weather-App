@@ -83,8 +83,7 @@ def prac(request):
             name=data['name'],
             city_image=img,
         )
-        
-            # form.save()
+             # form.save()
             # some sort of action needs to be performed here
             # (1) save data
             # (2) send an email ####
@@ -96,7 +95,7 @@ def prac(request):
     # else:
     #     form = CityForm()
         
-    # return HttpResponseRedirect(reverse('correct')) 
+   
 
     form = CityForm()
     context = {'form': form}
