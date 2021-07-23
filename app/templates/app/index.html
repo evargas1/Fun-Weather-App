@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tely Weather</title>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -24,6 +24,7 @@
     }
     .dropdown{
         border-radius: 12px;
+        margin-left: 5px;
     }
     .dropdown:hover{
         background-color: rgb(90, 158, 90);
@@ -124,7 +125,8 @@
             <input style="padding-left: 15px;" type="text" name="" id="" placeholder="       Search...">
             
             <div class="dropdown" style="background-color: rgb(119, 190, 119);">
-                <button class="add-city" style="padding: 10px 15px;" >Add a City &#x2b; </button>
+                <a href="{% url 'prac' %}"><button class="add-city" style="padding: 10px 15px;" >Add a City &#x2b; </button></a>
+                
             </div>
             </div>
             
