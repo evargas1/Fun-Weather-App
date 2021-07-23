@@ -76,17 +76,23 @@ def prac(request):
         # this was taken from the docs
         # becaise we are also looking for a file git
         form = CityForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
+        data = request.POST
+        img = request.FILES.get('image')
+
+        new_city = City.objects.create(
+            name=data['name'],
+            city_image=img,
+        )
+        
             # form.save()
             # some sort of action needs to be performed here
             # (1) save data
             # (2) send an email ####
             # (3) return search result
             # (4) upload a file
-            return HttpResponseRedirect(reverse('search'))
-        else:
-            messages.add_message(request, messages.INFO, 'We already have this city! Return to Homepage to view')
+        return HttpResponseRedirect(reverse('search'))
+        # else:
+        #     messages.add_message(request, messages.INFO, 'We already have this city! Return to Homepage to view')
     else:
         form = CityForm()
         

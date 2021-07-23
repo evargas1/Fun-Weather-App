@@ -125,14 +125,23 @@
 
             {% csrf_token %}
 
-            {{ form }}
+            <div class="input-box" style="padding: 15px;">
+                <label for="id_name">Username: </label>
+                <input id="id_name" type="text" name="name">
+              </div>
+
+              <div class="input-box" style="padding: 15px;">
+                <label for="id_city_image">Username: </label>
+                <input id="id_city_image" type="file" name="image">
+              </div>
+
             <input type="submit" value="Submit" enctype="multipart/form-data">
         </form>
-        {% if messages %}
+        <!-- {% if messages %}
             {% for mes in messages %}
                 <h1>Hey {{ mes }}</h1>
             {% endfor %}
-        {% endif %}
+        {% endif %} -->
 
 
 
