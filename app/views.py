@@ -10,6 +10,7 @@ from django.urls import reverse
 from .forms import CityForm
 from django.urls import reverse
 from django.contrib import messages
+from .forms import ModelFormWithFileField
 
 
 def index(request):
