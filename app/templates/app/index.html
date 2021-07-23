@@ -132,7 +132,7 @@
                                 
                             </div>
                             <div class="del_butt">
-                                <form action="{% url 'city_delete' city.id %}" method="post">
+                                <form method="post">
                                     {% csrf_token %}
                                     <input type="submit" value="Delete cat">
                                 </form>
