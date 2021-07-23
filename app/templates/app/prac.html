@@ -120,23 +120,30 @@
 
 
         <div class="dif-city">
-        <h1>Search</h1>
-        <form method="post" enctype="multipart/form-data">
-
-            {% csrf_token %}
-
-            <div class="input-box" style="padding: 15px;">
-                <label for="id_name">City: </label>
-                <input id="id_name" type="text" name="name">
+        
+        <div class="new-fun-city">
+            <div class="form-area">
+              <div class="main-form-tit">
+                <h1>Add a New city</h1>
               </div>
-
-              <div class="input-box" style="padding: 15px;">
-                <label for="id_city_image">Choose image: </label>
-                <input id="id_city_image" type="file" name="image">
-              </div>
-
-            <input type="submit" value="Submit" >
-        </form>
+              <form method="post" enctype="multipart/form-data">
+      
+            
+      
+                <div class="input-box" >
+                    <label for="id_name"></label>
+                    <input required id="id_name" type="text" name="name" placeholder="City">
+                  </div>
+        
+                  <div class="input-box" >
+                    <label for="id_city_image"></label>
+                    <input id="id_city_image" type="file" name="image">
+                  </div>
+        
+                <input class="submit-butt" type="submit" value="Add" >
+                </form>
+            </div>
+          </div>
         <!-- {% if messages %}
             {% for mes in messages %}
                 <h1>Hey {{ mes }}</h1>
