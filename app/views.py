@@ -54,11 +54,10 @@ def index(request):
         'fifth_row': weather_data[16:20],
         'sixth_row': weather_data[20:24],
         'seventh_row': weather_data[24:28],
-        'eight_row': weather_data[28:32],
-        'ninth_row': weather_data[32:36],
-        'tenth_row': weather_data[36:40],
+        'eight_row': weather_data[28:32], 
+        'tenth_row': weather_data[36:40], 
 
-        }
+    }
 
     return render(request, 'app/index.html', context)
 
