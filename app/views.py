@@ -73,7 +73,9 @@ def SearchResultsView(request):
 def prac(request):
     if request.method == 'POST' and request.FILES:
         # print(request.POST)
-        form = CityForm(request.POST, request.FILES)
+        # form = CityForm(request.POST, request.FILES)
+        form = ModelFormWithFileField(request.POST, request.FILES)
+        # this was taken from the docs
         # becaise we are also looking for a file git
         if form.is_valid():
             
@@ -87,7 +89,7 @@ def prac(request):
         else:
             messages.add_message(request, messages.INFO, 'We already have this city! Return to Homepage to view')
     else:
-        form = CityForm()
+        form = ModelFormWithFileField()
         
     # return HttpResponseRedirect(reverse('correct')) 
 
