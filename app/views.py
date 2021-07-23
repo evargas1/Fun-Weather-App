@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 # from django.shortcuts import render
 import requests
 from app.models import City
@@ -109,7 +109,7 @@ def city_delete(request, pk):
     # this will allow us to select the id
     if request.method == 'POST':
         city.delete()
-    return HttpResponseRedirect(reverse('search'))
+        return redirect('/search/')
     
 
     context = {'city':city}
