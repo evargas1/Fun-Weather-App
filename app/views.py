@@ -104,13 +104,3 @@ def prac(request):
 
 
 
-def city_delete(request, pk):
-    city = get_object_or_404(City, pk)
-    # this will allow us to select the id
-    if request.method == 'POST':
-        city.delete()
-        return redirect('/search/')
-    
-
-    context = {'city':city}
-    return render(request, 'app/index.html', context)
