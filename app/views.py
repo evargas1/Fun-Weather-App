@@ -10,6 +10,7 @@ from django.urls import reverse
 from .forms import CityForm
 from django.urls import reverse
 from django.contrib import messages
+from django.shortcuts import render, get_object_or_404
 
 
 
@@ -100,3 +101,16 @@ def prac(request):
     form = CityForm()
     context = {'form': form}
     return render(request, 'app/prac.html', context)
+
+
+
+def city_delete(request, pk):
+    city = get_object_or_404(City, pk)
+    # this will allow us to select the id
+    if request.method == 'POST':
+        city.delete()
+    return HttpResponseRedirect(reverse('search'))
+    
+
+    context = {'city':city}
+    return render(request, 'app/index.html', context)

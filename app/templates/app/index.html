@@ -131,6 +131,13 @@
                                 <h5>{{ city_weather.description }}</h5>
                                 
                             </div>
+                            <div class="del_butt">
+                                <form action="{% url 'app:city_delete' city.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="submit" value="Delete cat">
+                                </form>
+
+                            </div>
                         </div>
 
                         
